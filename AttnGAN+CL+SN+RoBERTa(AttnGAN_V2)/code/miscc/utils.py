@@ -62,11 +62,11 @@ def get_parameters():
     parser.add_argument("--eval", type=str2bool, default=False)
 
     # Path
-    parser.add_argument("--checkpoint_path", type=str, default="/vinai/tandm3/text2image-train/checkpoints")
-    parser.add_argument("--output_res_dir", type=str, default="/home/ubuntu/text2image-train/checkpoints")
-    parser.add_argument("--samples_dir", type=str, default="../samples")
-    parser.add_argument("--data_dir", type=str, default="../data/birds")
-    parser.add_argument("--encoders_dir", type=str, default="../DAMSMencoders")
+    parser.add_argument("--checkpoint_path", type=str, default="")
+    parser.add_argument("--output_res_dir", type=str, default="")
+    parser.add_argument("--samples_dir", type=str, default="")
+    parser.add_argument("--data_dir", type=str, default="")
+    parser.add_argument("--encoders_dir", type=str, default="")
 
     # Step size
     parser.add_argument("--log_step", type=int, default=10)
@@ -218,7 +218,7 @@ def build_super_images(
         for j in range(num_attn):
             one_map = attn[j]
             if (vis_size // att_sze) > 1:
-                one_map = skimage.transform.pyramid_expand(one_map, sigma=20, upscale=vis_size // att_sze,multichannel=True)
+                one_map = skimage.transform.pyramid_expand(one_map, sigma=20, upscale=vis_size // att_sze,channel_axis=-1)
             row_beforeNorm.append(one_map)
             minV = one_map.min()
             maxV = one_map.max()
@@ -309,7 +309,7 @@ def build_super_images2(real_imgs, captions, cap_lens, ixtoword, attn_maps, att_
             mask = one_map > thresh
             one_map = one_map * mask
             if (vis_size // att_sze) > 1:
-                one_map = skimage.transform.pyramid_expand(one_map, sigma=20, upscale=vis_size // att_sze,multichannel=True)
+                one_map = skimage.transform.pyramid_expand(one_map, sigma=20, upscale=vis_size // att_sze,channel_axis=-1)
             minV = one_map.min()
             maxV = one_map.max()
             one_map = (one_map - minV) / (maxV - minV)
