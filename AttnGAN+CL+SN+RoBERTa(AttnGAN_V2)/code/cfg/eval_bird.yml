@@ -1,7 +1,7 @@
-CONFIG_NAME: 'attn2'
+CONFIG_NAME: 'attanGAN-roberta-CL-SN'
 
 DATASET_NAME: 'birds'
-DATA_DIR: '/data/birds'
+DATA_DIR: 'Data/birds'
 GPU_ID: 3
 WORKERS: 1
 
@@ -15,7 +15,7 @@ TRAIN:
     NET_G: 'netG_epoch_570.pth'
     B_NET_D: False
     BATCH_SIZE: 12
-    NET_E: '/bird/text_encoder200.pth'
+    NET_E: 'text_encoder200.pth'
 
 
 GAN:

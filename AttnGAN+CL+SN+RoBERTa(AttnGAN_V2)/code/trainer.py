@@ -468,7 +468,7 @@ class condGANTrainer(object):
             print('Load G from: ', model_dir)
 
             # the path to save generated images
-            s_tmp = model_dir[:model_dir.rfind('.pth')]
+            s_tmp = 'val_gen_images'
             save_dir = '%s/%s' % (s_tmp, split_dir)
             mkdir_p(save_dir)
 
@@ -569,7 +569,7 @@ class condGANTrainer(object):
                 netG = G_DCGAN()
             else:
                 netG = G_NET()
-            s_tmp = '/kaggle/working/cl_gan_output'
+            s_tmp = 'example_images'
             model_dir = cfg.TRAIN.NET_G
             state_dict = \
                 torch.load(model_dir, map_location=lambda storage, loc: storage)
