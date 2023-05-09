@@ -29,7 +29,7 @@ import torch.backends.cudnn as cudnn
 import torchvision.transforms as transforms
 from transformers import RobertaModel
 
-from masks import mask_correlated_samples
+from masks import mask_correlated_samples_2
 from nt_xent import NT_Xent
 
 
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     ##########################################################################
     now = datetime.datetime.now(dateutil.tz.tzlocal())
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
-    output_dir = 'cl_damsm_output/%s_%s_%s' % \
+    output_dir = 'damsm_birds_output/%s_%s_%s' % \
         (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
 
     model_dir = os.path.join(output_dir, 'Model')
@@ -332,7 +332,7 @@ if __name__ == "__main__":
             para.append(v)
     # optimizer = optim.Adam(para, lr=cfg.TRAIN.ENCODER_LR, betas=(0.5, 0.999))
     # At any point you can hit Ctrl + C to break out of training early.
-    mask = mask_correlated_samples(batch_size)
+    mask = mask_correlated_samples_2(batch_size)
 
     temperature = 0.5
     device = labels.get_device()
@@ -361,10 +361,11 @@ if __name__ == "__main__":
             if (epoch % cfg.TRAIN.SNAPSHOT_INTERVAL == 0 or
                 epoch == cfg.TRAIN.MAX_EPOCH):
                 torch.save(image_encoder.state_dict(),
-                           '%s/cl_image_encoder%d.pth' % (model_dir, epoch))
+                           '%s/image_encoder%d.pth' % (model_dir, epoch))
                 torch.save(text_encoder.state_dict(),
-                           '%s/cl_text_encoder%d.pth' % (model_dir, epoch))
+                           '%s/text_encoder%d.pth' % (model_dir, epoch))
                 print('Save G/Ds models.')
     except KeyboardInterrupt:
         print('-' * 89)
         print('Exiting from training early')
+
