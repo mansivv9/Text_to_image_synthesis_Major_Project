@@ -65,6 +65,10 @@ def train(dataloader, cnn_model, rnn_model, batch_size,
     w_total_loss1 = 0
     count = (epoch + 1) * len(dataloader)
     start_time = time.time()
+    if cfg.DATASET_NAME == 'birds':
+        from datasets import TextDataset, prepare_data
+    if cfg.DATASET_NAME == 'flowers':
+        from datasets_flowers import TextDataset, prepare_data
 
 
     for step, data in enumerate(dataloader, 0):
@@ -196,6 +200,10 @@ def evaluate(dataloader, cnn_model, rnn_model, batch_size, criterion):
     rnn_model.eval()
     s_total_loss = 0
     w_total_loss = 0
+    if cfg.DATASET_NAME == 'birds':
+        from datasets import prepare_data
+    if cfg.DATASET_NAME == 'flowers':
+        from datasets_flowers import prepare_data
     for step, data in enumerate(dataloader, 0):
         # real_imgs, captions, cap_lens, \
         #         class_ids, keys = prepare_data(data)

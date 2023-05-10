@@ -1,7 +1,7 @@
 CONFIG_NAME: 'attanGAN-roberta-CL-SN-DAMSM'
 
-DATASET_NAME: 'data/birds'
-DATA_DIR: 'birds'
+DATASET_NAME: 'birds'
+DATA_DIR: 'data/birds'
 GPU_ID: 0
 WORKERS: 1
 
