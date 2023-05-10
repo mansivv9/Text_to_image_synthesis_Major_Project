@@ -264,7 +264,7 @@ class TextDataset(data.Dataset):
                 ixtoword, wordtoix, len(ixtoword)]
 
     def load_text_data(self, data_dir, split):
-        filepath = 'data/flowers/captions.pickle'
+        filepath = filepath = os.path.join(data_dir, 'captions.pickle')
         train_names = self.load_filenames(data_dir, 'train')
         test_names = self.load_filenames(data_dir, 'test')
         if not os.path.isfile(filepath):
@@ -296,7 +296,7 @@ class TextDataset(data.Dataset):
         return filenames, captions, ixtoword, wordtoix, n_words
 
     def load_class_id(self, data_dir, total_num):
-        with open('data/flowers/cat_to_name.json', 'r') as f:
+        with open(data_dir+'/cat_to_name.json', 'r') as f:
             cat_to_name = json.load(f)   
         dic_class=[]
         dic_classs={}
@@ -308,7 +308,7 @@ class TextDataset(data.Dataset):
         return dic_classs
 
     def load_filenames(self, data_dir, split):
-        filepath = 'data/flowers/flower_cat_dic.pkl'
+        filepath = data_dir+'/flower_cat_dic.pkl'
         if os.path.isfile(filepath):
             with open(filepath, 'rb') as f:
                 filenames = pickle.load(f)
