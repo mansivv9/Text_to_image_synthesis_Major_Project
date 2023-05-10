@@ -36,7 +36,7 @@ class Dataset(data.Dataset):
 
 
 if __name__ == '__main__':
-    path = ""
+    path = "netG_epoch_570.pth"
     batch_size = 16
     dataset = Dataset(path, transforms.Compose([
         transforms.Resize(299),
