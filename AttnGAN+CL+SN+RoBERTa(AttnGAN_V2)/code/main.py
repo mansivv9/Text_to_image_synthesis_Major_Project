@@ -1,7 +1,6 @@
 from __future__ import print_function
 
 from miscc.config import cfg, cfg_from_file
-from datasets import TextDataset
 from trainer import condGANTrainer as trainer
 
 import os
@@ -107,6 +106,10 @@ if __name__ == "__main__":
     torch.manual_seed(args.manualSeed)
     if cfg.CUDA:
         torch.cuda.manual_seed_all(args.manualSeed)
+    if cfg.DATASET_NAME == 'birds':
+        from datasets import TextDataset
+    if cfg.DATASET_NAME == 'flowers':
+        from datasets_flowers import TextDataset
 
     now = datetime.datetime.now(dateutil.tz.tzlocal())
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')

@@ -4,10 +4,6 @@ from miscc.utils import mkdir_p
 from miscc.utils import build_super_images
 from miscc.losses import sent_loss, words_loss
 from miscc.config import cfg, cfg_from_file
-
-from datasets import TextDataset
-from datasets import prepare_data
-
 from model import RNN_ENCODER, CNN_ENCODER
 
 import os
@@ -272,7 +268,11 @@ if __name__ == "__main__":
 
     if args.data_dir != '':
         cfg.DATA_DIR = args.data_dir
-    print('Using config:')
+    if cfg.DATASET_NAME == 'birds':
+        from datasets import TextDataset, prepare_data
+    if cfg.DATASET_NAME == 'flowers':
+        from datasets_flowers import TextDataset, prepare_data
+    print('Using config:') 
     pprint.pprint(cfg)
 
     if not cfg.TRAIN.FLAG:
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     ##########################################################################
     now = datetime.datetime.now(dateutil.tz.tzlocal())
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
-    output_dir = 'damsm_birds_output/%s_%s_%s' % \
+    output_dir = 'damsm_output/%s_%s_%s' % \
         (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
 
     model_dir = os.path.join(output_dir, 'Model')

@@ -14,7 +14,6 @@ from miscc.utils import mkdir_p
 from miscc.utils import build_super_images, build_super_images2
 from miscc.utils import weights_init, load_params, copy_G_params
 from model import G_DCGAN, G_NET
-from datasets import prepare_data
 from model import RNN_ENCODER, CNN_ENCODER
 
 from miscc.losses import words_loss
@@ -253,6 +252,10 @@ class condGANTrainer(object):
         temperature = 0.5
         device = noise.get_device()
         criterion = NT_Xent(batch_size, temperature, mask, device)
+        if cfg.DATASET_NAME == 'birds':
+            from datasets import prepare_data
+        if cfg.DATASET_NAME == 'flowers':
+            from datasets_flowers import prepare_data
 
         # gen_iterations = start_epoch * self.num_batches
         for epoch in range(start_epoch, self.max_epoch):
@@ -425,6 +428,10 @@ class condGANTrainer(object):
             im.save(fullpath)
 
     def sampling(self, split_dir):
+        if cfg.DATASET_NAME=='birds':
+            from datasets import prepare_data
+        if cfg.DATASET_NAME=='flowers':
+            from datasets_flowers import prepare_data
         if cfg.TRAIN.NET_G == '':
             print('Error: the path for morels is not found!')
         else:

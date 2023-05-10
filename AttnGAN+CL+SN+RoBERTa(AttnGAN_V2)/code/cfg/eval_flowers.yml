@@ -1,21 +1,21 @@
-CONFIG_NAME: 'attn2'
+CONFIG_NAME: 'attanGAN-roberta-CL-SN'
 
 DATASET_NAME: 'flowers'
-DATA_DIR: '/kaggle/input/flowers-dataset'
+DATA_DIR: 'data/flowers'
 GPU_ID: 3
 WORKERS: 1
 
-B_VALIDATION: False  # True  # False
+B_VALIDATION: True  # True  # False
 TREE:
     BRANCH_NUM: 3
 
 
 TRAIN:
     FLAG: False
-    NET_G: '/kaggle/input/flowers-captionsandtext-encoder/netG_epoch_570.pth'
+    NET_G: 'netG_epoch_590.pth'
     B_NET_D: False
     BATCH_SIZE: 12
-    NET_E: '/kaggle/input/flowers-captionsandtext-encoder/cl_text_encoder200.pth'
+    NET_E: 'text_encoder200.pth'
 
 
 GAN:

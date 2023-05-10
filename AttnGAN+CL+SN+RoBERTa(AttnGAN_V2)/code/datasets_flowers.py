@@ -185,7 +185,7 @@ class TextDataset(data.Dataset):
     def load_captions(self, data_dir, filenames):
         all_captions = []
         for i in range(len(filenames['img'])):
-            cap_path = '%s/%s.txt' % ('newmansi_flowers_text/', filenames['img'][i])
+            cap_path = '%s/%s.txt' % ('flowers_text/', filenames['img'][i])
             #cap_path =  +filenames['img'][i]
             with open(cap_path, "r") as f:
                 captions = f.read().split('\n')
@@ -264,7 +264,7 @@ class TextDataset(data.Dataset):
                 ixtoword, wordtoix, len(ixtoword)]
 
     def load_text_data(self, data_dir, split):
-        filepath = 'data/captions.pickle'
+        filepath = 'data/flowers/captions.pickle'
         train_names = self.load_filenames(data_dir, 'train')
         test_names = self.load_filenames(data_dir, 'test')
         if not os.path.isfile(filepath):
@@ -296,7 +296,7 @@ class TextDataset(data.Dataset):
         return filenames, captions, ixtoword, wordtoix, n_words
 
     def load_class_id(self, data_dir, total_num):
-        with open('RAT-GAN/data/cat_to_name.json', 'r') as f:
+        with open('data/flowers/cat_to_name.json', 'r') as f:
             cat_to_name = json.load(f)   
         dic_class=[]
         dic_classs={}
@@ -308,7 +308,7 @@ class TextDataset(data.Dataset):
         return dic_classs
 
     def load_filenames(self, data_dir, split):
-        filepath = 'data/flower_cat_dic.pkl'
+        filepath = 'data/flowers/flower_cat_dic.pkl'
         if os.path.isfile(filepath):
             with open(filepath, 'rb') as f:
                 filenames = pickle.load(f)
@@ -346,7 +346,7 @@ class TextDataset(data.Dataset):
         bbox = None
 
 
-        img_name = '%s/jpg/%s.jpg' % ('data', key)
+        img_name = '%s/jpg/%s.jpg' % (cfg.DATA_DIR, key)
         imgs = get_imgs(img_name, self.imsize,
                         bbox, self.transform, normalize=self.norm)  
         # random select a sentence
@@ -371,7 +371,8 @@ class TextDataset(data.Dataset):
         i = 0
         while len(mis_match_captions_t) < 99:
             idx = random.randint(0, self.number_example)
-            if cls_id == self.class_id[idx]:
+            cat1= self.filenames['cat'][idx]
+            if cls_id == self.class_id[cat1]:
                 continue
             sent_ix = random.randint(0, self.embeddings_num)
             new_sent_ix = idx * self.embeddings_num + sent_ix

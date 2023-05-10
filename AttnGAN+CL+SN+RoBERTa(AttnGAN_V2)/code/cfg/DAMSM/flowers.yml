@@ -1,7 +1,7 @@
 CONFIG_NAME: 'DAMSM'
 
 DATASET_NAME: 'flowers'
-DATA_DIR: 'data'
+DATA_DIR: 'data/flowers'
 GPU_ID: 0
 WORKERS: 1
 
