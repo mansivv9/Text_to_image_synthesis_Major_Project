@@ -1,5 +1,6 @@
 # Text_to_image_synthesis_Major_Project
 1. **Data Processing**
+
 -> BIRDS (Create a directory data/birds)
 
 * Download images from https://data.caltech.edu/records/20098 and place them in data/birds.
