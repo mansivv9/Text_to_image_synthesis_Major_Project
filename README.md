@@ -35,6 +35,7 @@
 
         python code/main.py --cfg code/cfg/flowers_attn2.yml --gpu 0
 5. **Evaluation**
+
 -> First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in code/cfg/eval_bird.yml or code/cfg/eval_flowers.yml.
 
 -> Give the path of best model checkpoint (eg: netG_epoch_200.pth) in "NET_G" field of code/cfg/eval_bird.yml or eval_flowers.yml.
