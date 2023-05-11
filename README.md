@@ -91,11 +91,34 @@
 * Flowers
 
         python code/main.py --cfg code/cfg/eval_flowers.yml --gpu 0
-6. **Data and Pretrained models**
+        
+6. Experiments
+
+We have included the changes to be made to perform the experiments mentioned in this research work in [code] (https://github.com/mansivv9/Text_to_image_synthesis_Major_Project/blob/main/attngan-experiments.ipynb)
+
+* Experiment 1: We tried transformers like AlBERT
+and RoBERTa as text encoders instead of BiLSTM in
+the AttnGAN architecture. Contrastive learning was
+applied in the GAN training phase. 
+
+* Experiment 2: In order to stabilize the training
+of GANs, we applied spectral normalization to the
+discriminator of AttnGAN architecture. Following the
+success of the previous Experiment 1, we adopted
+RoBERTa transformer as text encoder and contrastive
+learning technique in the GAN training phase. 
+
+* Experiment 3: An augmented model which uses RoBERTa
+as text encoder, contrastive learning in both DAMSM
+and GAN training phase and spectral normalization
+in the discriminator. Just clone this repository and follow the steps mentioned above to perform this experiment.
+
+
+7. **Data and Pretrained models**
 
 * The additional data required for flowers, inceptionV3 fine tuned models for the calculation of inception score, pretrained DAMSM models and that of GAN training phase are provided here: https://drive.google.com/drive/folders/1P7CYyYIDv5lEcVhDYAdf0hRMu9zLtU81?usp=share_link
 
-7. **REFERENCES** All the references used in this research work have been cited here
+8. **REFERENCES** All the references used in this research work have been cited here
 
 [1] Kashyap Kathrani. All about embeddings. Apr. 2022.
 URL: https://medium.com/@kashyapkathrani/
