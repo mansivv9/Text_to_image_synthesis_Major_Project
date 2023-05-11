@@ -3,14 +3,14 @@
 
 -> BIRDS (Create a directory data/birds)
 
-* Download images from https://data.caltech.edu/records/20098 and place them in data/birds.
-* Download preprocessed metadata from https://drive.google.com/file/d/1O_LtUP9sch09QH3s_EBAgLEctBQ5JBSJ/view and save it in data/birds.
+* Download images from [here](https://data.caltech.edu/records/20098) and place them in data/birds.
+* Download preprocessed metadata from [here](https://drive.google.com/file/d/1O_LtUP9sch09QH3s_EBAgLEctBQ5JBSJ/view) and save it in data/birds.
 
 -> FLOWERS (Create a directory data/flowers)
 
-* Download images from https://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz 
-* Download the preprocessed captions.pickle file from https://drive.google.com/file/d/1T7xvD2qEU4PkrQqFTxh6ZZyEYGFjmBIu/view?usp=share_link and save it to data/flowers
-* Download other annotations and dictionary files required for training from https://drive.google.com/drive/folders/1Y9rOLl3-FwQp0Y9sYbHM_D5JVrnPjD5h?usp=share_link and save them in data/flowers
+* Download images from [here](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz) 
+* Download the preprocessed captions.pickle file from [here](https://drive.google.com/file/d/1T7xvD2qEU4PkrQqFTxh6ZZyEYGFjmBIu/view?usp=share_link) and save it to data/flowers
+* Download other annotations and dictionary files required for training from [here](https://drive.google.com/drive/folders/1Y9rOLl3-FwQp0Y9sYbHM_D5JVrnPjD5h?usp=share_link) and save them in data/flowers
 
 2. **Clone the repository**
     
@@ -116,7 +116,7 @@ in the discriminator. Just clone this repository and follow the steps mentioned 
 
 7. **Data and Pretrained models**
 
-* The additional data required for flowers, inceptionV3 fine tuned models for the calculation of inception score, pretrained DAMSM models and that of GAN training phase are provided here: https://drive.google.com/drive/folders/1P7CYyYIDv5lEcVhDYAdf0hRMu9zLtU81?usp=share_link
+* The additional data required for flowers, inceptionV3 fine tuned models for the calculation of inception score, pretrained DAMSM models and that of GAN training phase are provided here: [click here](https://drive.google.com/drive/folders/1P7CYyYIDv5lEcVhDYAdf0hRMu9zLtU81?usp=share_link)
 
 8. **REFERENCES** All the references used in this research work have been cited here
 
