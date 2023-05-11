@@ -27,7 +27,7 @@
         python code/pretrain_DAMSM.py --cfg code/cfg/DAMSM/flowers.yml --gpu 0
 
 4. **GAN Training phase**
-* First give the path of data/birds or data/flowers in the field "DATA_DIR" in cfg/bird_attn2.yml or flowers_attn2.yml files.
+* First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in cfg/bird_attn2.yml or flowers_attn2.yml files.
 * Birds
 
         python code/main.py --cfg code/cfg/bird_attn2.yml --gpu 0
@@ -35,7 +35,7 @@
 
         python code/main.py --cfg code/cfg/flowers_attn2.yml --gpu 0
 5. **Evaluation**
--> First give the path of data/birds or data/flowers in the field "DATA_DIR" in code/cfg/eval_bird.yml or code/cfg/eval_flowers.yml.
+-> First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in code/cfg/eval_bird.yml or code/cfg/eval_flowers.yml.
 
 -> Give the path of best model checkpoint (eg: netG_epoch_200.pth) in "NET_G" field of code/cfg/eval_bird.yml or eval_flowers.yml.
 
