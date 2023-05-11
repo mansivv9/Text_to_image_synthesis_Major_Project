@@ -18,7 +18,7 @@
         cd 'Text_to_image_synthesis_Major_Project/AttnGAN+CL+SN+RoBERTa(AttnGAN_V2)'
 
 3. **DAMSM Training phase**
-* First give the path of data/birds or data/flowers in the field "DATA_DIR" in cfg/DAMSM/bird.yml or flowers.yml files.
+* First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in cfg/DAMSM/bird.yml or flowers.yml files.
 * Birds       
 
         python code/pretrain_DAMSM.py --cfg code/cfg/DAMSM/bird.yml --gpu 0
