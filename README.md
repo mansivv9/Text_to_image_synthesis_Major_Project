@@ -18,7 +18,7 @@
         cd 'Text_to_image_synthesis_Major_Project/AttnGAN+CL+SN+RoBERTa(AttnGAN_V2)'
 
 3. **DAMSM Training phase**
-* First give the path of data/birds or data/flowers in the field "DATA_DIR" in cfg/DAMSM/bird.yml or flowers.yml files.
+* First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in cfg/DAMSM/bird.yml or flowers.yml files.
 * Birds       
 
         python code/pretrain_DAMSM.py --cfg code/cfg/DAMSM/bird.yml --gpu 0
@@ -27,7 +27,7 @@
         python code/pretrain_DAMSM.py --cfg code/cfg/DAMSM/flowers.yml --gpu 0
 
 4. **GAN Training phase**
-* First give the path of data/birds or data/flowers in the field "DATA_DIR" in cfg/bird_attn2.yml or flowers_attn2.yml files.
+* First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in cfg/bird_attn2.yml or flowers_attn2.yml files.
 * Birds
 
         python code/main.py --cfg code/cfg/bird_attn2.yml --gpu 0
@@ -35,7 +35,8 @@
 
         python code/main.py --cfg code/cfg/flowers_attn2.yml --gpu 0
 5. **Evaluation**
--> First give the path of data/birds or data/flowers in the field "DATA_DIR" in code/cfg/eval_bird.yml or code/cfg/eval_flowers.yml.
+
+-> First give the complete path of data/birds or data/flowers in the field "DATA_DIR" in code/cfg/eval_bird.yml or code/cfg/eval_flowers.yml.
 
 -> Give the path of best model checkpoint (eg: netG_epoch_200.pth) in "NET_G" field of code/cfg/eval_bird.yml or eval_flowers.yml.
 
@@ -94,10 +95,7 @@
 
 * The additional data required for flowers, inceptionV3 fine tuned models for the calculation of inception score, pretrained DAMSM models and that of GAN training phase are provided here: https://drive.google.com/drive/folders/1P7CYyYIDv5lEcVhDYAdf0hRMu9zLtU81?usp=share_link
 
-7. **References**
-All the references used in this research work have been cited here
-
-REFERENCES
+7. **REFERENCES** All the references used in this research work have been cited here
 
 [1] Kashyap Kathrani. All about embeddings. Apr. 2022.
 URL: https://medium.com/@kashyapkathrani/
