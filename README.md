@@ -94,7 +94,7 @@
         
 6. Experiments
 
-We have included the changes to be made to perform the experiments mentioned in this research work in [code] (https://github.com/mansivv9/Text_to_image_synthesis_Major_Project/blob/main/attngan-experiments.ipynb)
+We have included the changes to be made to perform the experiments mentioned in this research work in [code](https://github.com/mansivv9/Text_to_image_synthesis_Major_Project/blob/main/attngan-experiments.ipynb)
 
 * Experiment 1: We tried transformers like AlBERT
 and RoBERTa as text encoders instead of BiLSTM in
