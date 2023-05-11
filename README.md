@@ -95,10 +95,7 @@
 
 * The additional data required for flowers, inceptionV3 fine tuned models for the calculation of inception score, pretrained DAMSM models and that of GAN training phase are provided here: https://drive.google.com/drive/folders/1P7CYyYIDv5lEcVhDYAdf0hRMu9zLtU81?usp=share_link
 
-7. **References**
-All the references used in this research work have been cited here
-
-REFERENCES
+7. **REFERENCES** All the references used in this research work have been cited here
 
 [1] Kashyap Kathrani. All about embeddings. Apr. 2022.
 URL: https://medium.com/@kashyapkathrani/
