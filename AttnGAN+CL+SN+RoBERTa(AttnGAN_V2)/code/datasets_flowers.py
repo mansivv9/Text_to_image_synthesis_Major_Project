@@ -152,7 +152,7 @@ class TextDataset(data.Dataset):
         self.filenames, self.captions, self.ixtoword, \
             self.wordtoix, self.n_words = self.load_text_data(data_dir, split)
 
-        self.class_id = self.load_class_id(split_dir, len(self.filenames['img']))
+        self.class_id = self.load_class_id(data_dir, len(self.filenames['img']))
         self.dict_name2cap = {}
         
         self.number_example = len(self.filenames['img'])
